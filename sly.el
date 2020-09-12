@@ -7391,7 +7391,7 @@ can be found."
 (defun sly--byte-compile (symbol)
   (require 'bytecomp) ;; tricky interaction between autoload and let.
   (let ((byte-compile-warnings '()))
-    (byte-compile symbol)))
+    (byte-compile (symbol-function symbol))))
 
 (defun sly-byte-compile-hotspots (syms)
   (mapc (lambda (sym)
